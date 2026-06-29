@@ -33,13 +33,19 @@ public class FitLife {
 		if(calories>=1000) {
 			calories=1000;
 		}
-		public int calculate
+		return calories;
+	}
+		public int calculateFine(int hours,int fixedCalories) {
+			int calories=hours*100+fixedCalories;
+			if(calories>=1000) {
+				calories=1000;
+			}
+			return calories;
+		
 		
 	}
 
-
-
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		int hour1=sc.nextInt();
 		int hour2=sc.nextInt();
@@ -53,9 +59,10 @@ public class FitLife {
 		FitLife fc1=new FitLife(id1);
 		FitLife fc2=new FitLife(id2,type2);
 		System.out.println(fc1.calculateCalories(hour1));
-		System.out.println(fc1);
+		System.out.println(fc1.calculateFine(hour2, type2));
+		System.out.println(fc1.calculateFine(hour3,fixedCalories));
 		sc.close();
 
-	}
+	};
 
 }
